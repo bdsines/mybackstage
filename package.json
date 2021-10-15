@@ -6,7 +6,7 @@
     "node": "14 || 16"
   },
   "scripts": {
-    "dev": "concurrently \"yarn start\" \"yarn start-backend\"",
+    "dev": "set -o allexport; source .env; set +o allexport && concurrently \"yarn start\" \"yarn start-backend\"",
     "start": "yarn workspace app start",
     "start-backend": "yarn workspace backend start",
     "build": "lerna run build",
